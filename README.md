@@ -52,13 +52,13 @@ $ heroku create cod3r-my-money-app-backend
 > 
 > Como exemplo, chamaremos a aplicação no Heroku de **cod3r-my-money-app-backend**, mas você precisa escolher um outro nome único.
 
-### 6) Selecionar o buildpack para NodeJS
+### 7) Selecionar o buildpack para NodeJS
 
 ```bash
 $ heroku buildpacks:set heroku/nodejs
 ```
 
-### 7) Configurar o repositório remoto
+### 8) Configurar o repositório remoto
 
 ```bash
 $ heroku git:remote -a cod3r-my-money-app-backend
@@ -68,7 +68,7 @@ $ heroku git:remote -a cod3r-my-money-app-backend
 > 
 > Usar o **nome** do seu projeto.
 
-### 8) Adicionar o Add-on do **_mLab_** para termos uma instância do **_MongoDB_**
+### 9) Adicionar o Add-on do **_mLab_** para termos uma instância do **_MongoDB_**
 
 ![](doc/mongo_addon.png)
 *Add-on do **_mLab_***
@@ -77,7 +77,7 @@ $ heroku git:remote -a cod3r-my-money-app-backend
 > 
 > Apesar de escolher a instância do MongoDB **grátis**, é necessário informar os dados de pagamento (cartão de crédito)... **:(**
 
-### 9) Clicar no Add-on do **_mLab_** e adicionar o usuário da aplicação
+### 10) Clicar no Add-on do **_mLab_** e adicionar o usuário da aplicação
 
 ![](doc/mongo_add_user.png)
 *Adicionar usuário do **_MongoDB_***
@@ -86,7 +86,7 @@ $ heroku git:remote -a cod3r-my-money-app-backend
 > 
 > No exemplo acima criei um usuário com nome **mymoneyapp** e senha **mymoneyapp**. **É obvio que esse padrão senha não é recomendado para produção**.
 
-### 10) Configurar as variáveis de ambiente que a aplicação **_backend_** usa.
+### 11) Configurar as variáveis de ambiente que a aplicação **_backend_** usa.
 
 ```bash
 # URL_MONGO é mais ou menos assim: mongodb://user:pass@XYZ.mlab.com:19585/heroku_XYZ
@@ -96,19 +96,19 @@ $ heroku config:set MONGOLAB_URI=<URL_MONGO>
 $ heroku config:set AUTH_SECRET=4bc12841b901f1716f71ab76b99699d6
 ```
 
-### 11) Fazer deploy da aplicação via **push** no repositório.
+### 12) Fazer deploy da aplicação via **push** no repositório.
 
 ```bash
 $ git push heroku master
 ```
 
-### 12) Definir o tipo de escalonamento mínimo (grátis) - Passo **Opcional**
+### 13) Definir o tipo de escalonamento mínimo (grátis) - Passo **Opcional**
 
 ```bash
 $ heroku ps:scale web=1
 ```
 
-### 13) Consultar o log e verificar se tudo ocorreu bem - Passo **Opcional**
+### 14) Consultar o log e verificar se tudo ocorreu bem - Passo **Opcional**
 
 ```bash
 $ heroku logs --tail
